@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent } from "react";
 
 export default function TipCalculator() {
   const [billValue, setBillValue] = useState<number>(0);
