@@ -7,15 +7,6 @@ export default function TipCalculator() {
   const [amountPerPerson, setAmountPerPerson] = useState<number>(0);
   const [totalPerPerson, setTotalPerPerson] = useState<number>(0);
 
-  const handleReset = () => {
-    setBillValue(0);
-    setPeople(0);
-    setAmountPerPerson(0);
-    setTotalPerPerson(0);
-    setPercentage(0);
-    uncheckRadioButtons();
-  };
-
   const handleChecked = (e: ChangeEvent<HTMLInputElement>) => {
     setPercentage(parseInt(e.currentTarget.value));
   };
@@ -223,14 +214,6 @@ export default function TipCalculator() {
               CALCULATE
             </button>
           </div>
-          {/* <div>
-            <button
-              className="w-full bg-strong-cyan text-very-dark-cyan rounded-md py-3 hover:bg-strong-cyan-hover"
-              onClick={handleReset}
-            >
-              RESET
-            </button>
-          </div> */}
         </div>
       </div>
     </div>
