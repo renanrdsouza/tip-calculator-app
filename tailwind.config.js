@@ -28,7 +28,9 @@ export default {
         'logo': '3.321rem'
       },
       backgroundImage: {
-        'logo': "url('/src/images/logo.svg')"
+        'logo': "url('/src/images/logo.svg')",
+        'icon-dollar': "url('/src/images/icon-dollar.svg')",
+        'icon-person': "url('/src/images/icon-person.svg')"
       }
     },
   },

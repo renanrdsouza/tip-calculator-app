@@ -1,6 +1,6 @@
 const Result = (props: {
-  amountPerPerson: number;
-  totalPerPerson: number;
+  amountPerPerson: string;
+  totalPerPerson: string;
   calculate: Function;
   billValue: number;
   percentage: number;

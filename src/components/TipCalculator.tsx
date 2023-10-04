@@ -8,8 +8,8 @@ export default function TipCalculator() {
   const [billValue, setBillValue] = useState<number>(0);
   const [people, setPeople] = useState<number>(0);
   const [percentage, setPercentage] = useState<number>(0);
-  const [amountPerPerson, setAmountPerPerson] = useState<number>(0);
-  const [totalPerPerson, setTotalPerPerson] = useState<number>(0);
+  const [amountPerPerson, setAmountPerPerson] = useState<string>(0.00.toFixed(2));
+  const [totalPerPerson, setTotalPerPerson] = useState<string>(0.00.toFixed(2));
 
   const handleChecked = (e: ChangeEvent<HTMLInputElement>) => {
     setPercentage(parseInt(e.currentTarget.value));
@@ -25,13 +25,13 @@ export default function TipCalculator() {
     const totalPerPerson = (bill + tip) / numberOfPeople;
     setAmountPerPerson(
       !isNaN(amountPerPerson) && amountPerPerson !== Infinity
-        ? amountPerPerson
-        : 0
+        ? amountPerPerson.toFixed(2)
+        : 0.00.toFixed(2)
     );
     setTotalPerPerson(
       !isNaN(totalPerPerson) && totalPerPerson !== Infinity 
-        ? totalPerPerson 
-        : 0
+        ? totalPerPerson.toFixed(2)
+        : 0.00.toFixed(2)
     );
   };
 
@@ -47,13 +47,13 @@ export default function TipCalculator() {
       <div className="bg-logo bg-no-repeat w-logo h-logo"></div>
       <div className="bg-white w-mobile mt-10 rounded-xl py-10 px-8 md:w-desktop md:grid md:grid-cols-2 md:gap-x-12">
         <div>
-          <BillForm billValue={billValue} setBillValue={setBillValue} />
+          <BillForm setBillValue={setBillValue} />
           <PercentageForm
             handleChecked={handleChecked}
             uncheckRadioButtons={uncheckRadioButtons}
           />
           <div className="mt-8">
-            <PeopleForm people={people} setPeople={setPeople} />
+            <PeopleForm setPeople={setPeople} />
           </div>
         </div>
         <Result
